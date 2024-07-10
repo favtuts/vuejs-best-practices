@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <title>VueJS Starter</title>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+    Vue.createApp({        
+        setup() {
+            console.log("Hello World");
+            return {
+                message: 'Hello World'
+            }
+        }        
+    }).mount('#app');
+    </script>
+</body>
+</html>

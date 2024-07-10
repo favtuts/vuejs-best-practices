@@ -2,6 +2,57 @@
 * https://tutorialedge.net/javascript/vuejs/getting-started-with-vuejs/
 
 
+# A simple Vue App
+
+Create directory
+```
+$ mkdir simple-vue-app
+$ cd simple-vue-app
+```
+
+Create HTML Index page 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>VueJS Starter</title>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                message: 'Hello World'
+            }
+        },
+        created() {
+            console.log("Hello World")
+        }
+    });
+    </script>
+</body>
+</html>
+```
+
+Run this HTML page
+```
+$ npm install -g live-server
+$ live-server
+
+Serving "/path/to/simple-vue-app" at http://127.0.0.1:8080
+```
+
+You may see the error: `TypeError: Vue is not a constructor`
+* https://laracasts.com/discuss/channels/vue/vue-3-uncaught-typeerror-vue-is-not-a-constructor
+
+In Vue 3, the syntax for creating a new Vue instance has changed. Instead of using `new Vue({})`, you should use `Vue.createApp({})`.
+
+
 # Use the latest Nodejs LTS
 
 * Refer: https://gist.github.com/iotspace/f830c353ba0051627d161c7f26b67e8f
@@ -159,8 +210,15 @@ Open up the `src/components/HelloWorld.vue` component and remove some of the def
 </style>
 ```
 
+# Testing the changes
+
 Run the App
 ```
 $ npm run serve
 $ yarn serve
+```
+
+Access browser
+```
+http://localhost:8080
 ```
