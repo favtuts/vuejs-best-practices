@@ -83,3 +83,7 @@ And the `index.html` as follow
 ```
 
 ![creating-vue-app](./images/vuejs3-tutorials-basics-creating-vue-app.png)
+
+
+# Data & Templates
+
