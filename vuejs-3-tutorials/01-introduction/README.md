@@ -43,4 +43,6 @@
 
 # Environment Setup
 * Install VS Code
-* Install the Live-Server extension
+* Install the Live-Server extension for hot reload changes
+* Install the Vetur extenstion for highlighting, formating Vue codes
+* Install the Material Icon Theme extension for beautiful icons in VS Code
