@@ -160,3 +160,20 @@ Continue, we add more button to decrease the age:
 
 Now you an increase your age or decrease your age by clicking on these buttons
 ![vue-button-decrease-event](./images/vuejs3-tutorials-basics-button-decrease-event.png)
+
+
+You can replace the directive `v-on` with `@`, example:
+```html
+    <div id="app">
+        <p> {{ title }} - {{ author }} - {{ age }}</p>      
+        
+        <button v-on:click="age++">Increase age</button>
+        <button v-on:click="age--">Decrease age</button>
+        <div @click="title = 'something else'">Change book title</div>
+    </div>
+```
+
+Now you can click on the text `Change book title`, and you can see the title part will change to `something else`
+![vue-div-click-event](./images/vuejs3-tutorials-basics-div-click-event.png)
+
+
