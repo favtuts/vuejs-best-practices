@@ -133,3 +133,17 @@ And we render more variables
 
 ![vue-bind-variables](./images/vuejs3-tutorials-basics-bind-variables.png)
 
+# Click Events
+
+Create a button, and use the directive `v-on`, meaning on click or on mounted.
+```html
+    <div id="app">
+        <p> {{ title }} - {{ author }} - {{ age }}</p>      
+        
+        <button v-on:click="age++">Increase age</button>
+    </div>
+```
+
+Now you can increase your age by clicking on the button
+
+![vue-button-click-event](./images/vuejs3-tutorials-basics-button-click-event.png)
