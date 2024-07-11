@@ -87,3 +87,26 @@ And the `index.html` as follow
 
 # Data & Templates
 
+Will show how to use Dynamic variable. First, the `data()` function in the `app.js` file
+```js
+const app = Vue.createApp({
+    data() {
+        return {
+            title: 'The Final Empire',
+        }
+    }
+})
+
+app.mount('#app')
+```
+
+Then in the `index.html` it will bind the `title` variable value:
+```html
+    <div id="app">
+        <p> {{ title }}</p>
+    </div>
+
+    <script src="app.js"></script>
+```
+
+![vue-bind-variable](./images/vuejs3-tutorials-basics-bind-variable.png)
