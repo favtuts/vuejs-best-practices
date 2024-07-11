@@ -222,3 +222,23 @@ You can change the title variable by accessing `this.title` from the method
 ![vue-change-title-method](./images/vuejs3-tutorials-basics-change-title-variable.png)
 
 
+Now this is demo of passing parameter to the method
+```html
+    <div id="app">
+        <p> {{ title }} - {{ author }} - {{ age }}</p>      
+
+        <div @click="changeTitle('Oauthbringer')">Change book title</div>
+    </div>
+```
+Add the `title` parameter to the method
+```js
+    methods: {
+        changeTitle(title) {
+            // this.title = 'Words of Randiance'
+            this.title = title
+        }
+    }
+```
+
+![vue-change-title-passing-parameter](./images/vuejs3-tutorials-basics-change-title-passing-parameter-method.png)
+
