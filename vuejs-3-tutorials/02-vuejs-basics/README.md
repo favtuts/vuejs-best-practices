@@ -177,3 +177,36 @@ Now you can click on the text `Change book title`, and you can see the title par
 ![vue-div-click-event](./images/vuejs3-tutorials-basics-div-click-event.png)
 
 
+We can create methods instead of inline code for these above events:
+```js
+const app = Vue.createApp({
+    data() {
+        return {
+            title: 'The Final Empire',
+            author: 'Brandon Sanderson',
+            age: 45
+        }
+    },
+    methods: {
+        changeTitle() {
+            console.log('you clicked me')
+        }
+    }
+})
+```
+
+and you can call this `changeTitle` method from click event
+```html
+    <div id="app">
+        <p> {{ title }} - {{ author }} - {{ age }}</p>      
+        
+        <button v-on:click="age++">Increase age</button>
+        <button v-on:click="age--">Decrease age</button>
+        <div @click="changeTitle()">Change book title</div>
+    </div>
+```
+
+Now you can see the log output `you clicked me` in the console:
+![vue-define-changeTitle-method](./images/vuejs3-tutorials-basics-define-changeTitle-event.png)
+
+
