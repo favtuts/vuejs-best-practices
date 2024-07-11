@@ -259,3 +259,33 @@ Trying to do some styles
 ```
 
 ![vue-basics-dynamic-class-styling](./images/vuejs3-tutorials-dynamic-class-finalizing.png)
+
+# Toggling Favs
+
+Challenge - Add to Favs
+* attach a click event to each li tag (for each book)
+* when a user clicks an li, toggle the `isFav` property of that book
+
+Register `click` event to `li` tag in HTML Code
+```html
+            <ul>
+                <li v-for="book in books" :class="{ fav: book.isFav }" @click="toggleFav(book)">
+                    <img height="120px" :src="book.img" :alt="book.title" >
+                    <h3> {{ book.title }} </h3>                    
+                    <p> {{ book.author }}</p>
+                </li>
+            </ul>
+```
+Write the method `toggleFav`
+```js
+    methods: {        
+        toggleShowBooks() {
+            this.showBooks = !this.showBooks
+        },
+        toggleFav(book) {
+            book.isFav = !book.isFav
+        },        
+    }
+```
+
+![vue-basics-toggle-book](./images/vuejs3-tutorials-toggle-book-item.png)
