@@ -193,3 +193,69 @@ and JS Code:
 ![vue-basics-image-binding](./images/vuejs3-tutorials-imgage-binding-books.png)
 
 
+# Dynamic Class
+
+Now we control the dynamic class for favourited books
+```html
+    <div id="app">
+        <div v-if="showBooks">           
+            <!-- outputting list-->
+            <ul>
+                <li v-for="book in books" :class="{ fav: book.isFav }">
+                    <img :src="book.img" :alt="book.title" >
+                    <h3> {{ book.title }} </h3>                    
+                    <p> {{ book.author }}</p>
+                </li>
+            </ul>
+        </div>
+    </div>       
+```
+
+And JS Code
+```js
+    data() {
+        return {            
+            showBooks: true,
+            books: [
+                {title: 'name of the wind', author: 'patrick rothfuss', img: 'assets/TheNameoftheWind_cover.jpg', isFav: true},
+                {title: 'the way of kings', author: 'brandon sanderson', img: 'assets/TheWayOfKings_cover.jpg', isFav: false},
+                {title: 'the final empire', author: 'brandon sanderson', img: 'assets/TheFinalEmpire_cover.jpg', isFav: true},
+            ]
+        }
+    },
+```
+
+![vue-basics-dynamic-class-test](./images/vuejs3-tutorials-dynamic-class-testing.png)
+
+Trying to do some styles
+```html
+<head>    
+    <style>
+        body{
+            background: #eee;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+        p, h3, ul{
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style-type: none;
+            background: #fff;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        li.fav {
+            background: #ff9ed2;
+            color: white;
+        }
+    </style>
+</head>
+```
+
+![vue-basics-dynamic-class-styling](./images/vuejs3-tutorials-dynamic-class-finalizing.png)
