@@ -242,3 +242,29 @@ Add the `title` parameter to the method
 
 ![vue-change-title-passing-parameter](./images/vuejs3-tutorials-basics-change-title-passing-parameter-method.png)
 
+
+# Conditional Rendering
+
+Using directive `v-if` and `v-else` to control conditional readering
+```html
+    <div id="app">
+        <div v-if="showBooks">
+            <p> {{ title }} - {{ author }} - {{ age }}</p>      
+        </div>
+
+        <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <span v-if="!showBooks">Show Books</span>
+        </button>
+    </div>
+```
+and the JS method
+```js
+    methods: {        
+        toggleShowBooks() {
+            this.showBooks = !this.showBooks
+        }
+    }
+```
+
+![vue-show-hide-book](./images/vuejs3-tutorials-basics-show-hide-books.png)
