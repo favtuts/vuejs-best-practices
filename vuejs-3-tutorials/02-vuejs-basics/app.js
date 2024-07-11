@@ -8,7 +8,7 @@ const app = Vue.createApp({
     },
     methods: {
         changeTitle() {
-            console.log('you clicked me')
+            this.title = 'Words of Randiance'
         }
     }
 })

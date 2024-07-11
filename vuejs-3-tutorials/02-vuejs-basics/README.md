@@ -210,3 +210,15 @@ Now you can see the log output `you clicked me` in the console:
 ![vue-define-changeTitle-method](./images/vuejs3-tutorials-basics-define-changeTitle-event.png)
 
 
+You can change the title variable by accessing `this.title` from the method
+```js
+    methods: {
+        changeTitle() {
+            this.title = 'Words of Randiance'
+        }
+    }
+```
+
+![vue-change-title-method](./images/vuejs3-tutorials-basics-change-title-variable.png)
+
+
