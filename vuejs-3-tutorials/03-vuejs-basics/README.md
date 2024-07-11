@@ -78,3 +78,19 @@ And JS code
 
 ![vue-basics-mouse-explicit-event](./images/vuejs3-tutorials-mouse-explicit-event-data.png)
 
+
+Now we are going to explore the `mousemove` event, to print the relative position of mouse in the box:
+```html
+        <div class="box" @mousemove="handleMousemove">position - [ {{ x }} ; {{ y }} ]</div>
+```
+and JS code
+```js
+    methods: {        
+        handleMousemove(e) {
+            this.x = e.offsetX
+            this.y = e.offsetY
+        }        
+    }
+```
+
+![vue-basics-mouse-move-event](./images/vuejs3-tutorials-mouse-move-event.png)
