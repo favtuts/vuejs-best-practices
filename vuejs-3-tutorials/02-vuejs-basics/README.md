@@ -268,3 +268,13 @@ and the JS method
 ```
 
 ![vue-show-hide-book](./images/vuejs3-tutorials-basics-show-hide-books.png)
+
+
+Now we will use `v-show` directive, this control the CSS show hide but not control the rendering show hide. It will append the CSS `style="display: none;"` to the DIV
+```html
+    <div id="app">
+        <div v-show="showBooks">currently showing books</div>
+    </div>
+```
+
+![vue-v-show-directive](./images/vuejs3-tutorials-basics-v-show-directive.png)
