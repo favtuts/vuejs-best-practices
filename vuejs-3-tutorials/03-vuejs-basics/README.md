@@ -94,3 +94,42 @@ and JS code
 ```
 
 ![vue-basics-mouse-move-event](./images/vuejs3-tutorials-mouse-move-event.png)
+
+
+# Outputting Lists
+
+Using `v-for` directive to list all the books
+```html
+    <div id="app">
+        <div v-if="showBooks">                        
+            <ul>
+                <li v-for="book in books">
+                    <h3> {{ book.title }} </h3>                    
+                    <p> {{ book.author }}</p>
+                </li>
+            </ul>
+        </div>                    
+
+        <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <span v-else>Show Books</span>
+        </button>
+    </div>
+```
+
+JS Code
+```js
+    data() {
+        return {
+            showBooks: true,
+            books: [
+                {title: 'name of the wind', author: 'patrick rothfuss'},
+                {title: 'the way of kings', author: 'brandon sanderson'},
+                {title: 'the final empire', author: 'brandon sanderson'},
+            ]
+        }
+    },
+```
+
+
+![vue-basics-list-books](./images/vuejs3-tutorials-render-list-books.png)
