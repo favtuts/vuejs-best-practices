@@ -147,3 +147,16 @@ Create a button, and use the directive `v-on`, meaning on click or on mounted.
 Now you can increase your age by clicking on the button
 
 ![vue-button-click-event](./images/vuejs3-tutorials-basics-button-click-event.png)
+
+Continue, we add more button to decrease the age:
+```html
+    <div id="app">
+        <p> {{ title }} - {{ author }} - {{ age }}</p>      
+        
+        <button v-on:click="age++">Increase age</button>
+        <button v-on:click="age--">Decrease age</button>
+    </div>
+```
+
+Now you an increase your age or decrease your age by clicking on these buttons
+![vue-button-decrease-event](./images/vuejs3-tutorials-basics-button-decrease-event.png)
