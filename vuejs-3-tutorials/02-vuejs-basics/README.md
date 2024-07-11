@@ -110,3 +110,26 @@ Then in the `index.html` it will bind the `title` variable value:
 ```
 
 ![vue-bind-variable](./images/vuejs3-tutorials-basics-bind-variable.png)
+
+Now you can add more variable to the object
+```js
+const app = Vue.createApp({
+    data() {
+        return {
+            title: 'The Final Empire',
+            author: 'Brandon Sanderson',
+            age: 45
+        }
+    }
+})
+```
+
+And we render more variables
+```html
+    <div id="app">
+        <p> {{ title }} - {{ author }} - {{ age }}</p>
+    </div>
+```
+
+![vue-bind-variables](./images/vuejs3-tutorials-basics-bind-variables.png)
+
