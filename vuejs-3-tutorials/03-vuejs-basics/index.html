@@ -43,14 +43,23 @@
 
     <div id="app">
         <!-- attribute binding -->
-        <a v-bind:href="url">best website ever</a>
+        <a v-bind:href="url">best website ever</a>        
 
         <div v-if="showBooks">
             <p> {{ title }} - {{ author }} - {{ age }}</p>  
             
             <!-- outputting list-->
+            <h2>Favourited Books</h2>
             <ul>
-                <li v-for="book in books" :class="{ fav: book.isFav }" @click="toggleFav(book)">
+                <li v-for="book in filteredFavBooks" :class="{ fav: book.isFav }" @click="toggleFav(book)">
+                    <img height="120px" :src="book.img" :alt="book.title" >
+                    <h3> {{ book.title }} </h3>                    
+                    <p> {{ book.author }}</p>
+                </li>
+            </ul>
+            <h2>Un-Favourited Books</h2>
+            <ul>
+                <li v-for="book in filteredNotFavBooks" :class="{ fav: book.isFav }" @click="toggleFav(book)">
                     <img height="120px" :src="book.img" :alt="book.title" >
                     <h3> {{ book.title }} </h3>                    
                     <p> {{ book.author }}</p>

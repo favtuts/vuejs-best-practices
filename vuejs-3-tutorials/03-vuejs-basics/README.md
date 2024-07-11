@@ -289,3 +289,40 @@ Write the method `toggleFav`
 ```
 
 ![vue-basics-toggle-book](./images/vuejs3-tutorials-toggle-book-item.png)
+
+
+# Computed Properties
+
+Show the Fav books and NotFav books
+```html
+            <h2>Favourited Books</h2>
+            <ul>
+                <li v-for="book in filteredFavBooks" :class="{ fav: book.isFav }" @click="toggleFav(book)">
+                    <img height="120px" :src="book.img" :alt="book.title" >
+                    <h3> {{ book.title }} </h3>                    
+                    <p> {{ book.author }}</p>
+                </li>
+            </ul>
+            <h2>Un-Favourited Books</h2>
+            <ul>
+                <li v-for="book in filteredNotFavBooks" :class="{ fav: book.isFav }" @click="toggleFav(book)">
+                    <img height="120px" :src="book.img" :alt="book.title" >
+                    <h3> {{ book.title }} </h3>                    
+                    <p> {{ book.author }}</p>
+                </li>
+            </ul>
+```
+
+Create `computed` methods for filtering Fav books and NotFav books
+```js
+    computed: {
+        filteredFavBooks() {
+            return this.books.filter((book) => book.isFav)
+        },
+        filteredNotFavBooks() {
+            return this.books.filter((book) => !book.isFav)
+        }
+    }
+```
+
+![vue-basics-computed-fav-book](./images/vuejs3-tutorials-computed-toggle-fav-books.png)

@@ -5,7 +5,7 @@ const app = Vue.createApp({
             showBooks: true,
             books: [
                 {title: 'name of the wind', author: 'patrick rothfuss', img: 'assets/TheNameoftheWind_cover.jpg', isFav: true},
-                {title: 'the way of kings', author: 'brandon sanderson', img: 'assets/TheWayOfKings_cover.jpg', isFav: false},
+                {title: 'the way of kings', author: 'brandon sanderson', img: 'assets/TheWayOfKings_cover.jpg', isFav: true},
                 {title: 'the final empire', author: 'brandon sanderson', img: 'assets/TheFinalEmpire_cover.jpg', isFav: true},
             ],
             title: 'The Final Empire',
@@ -32,6 +32,14 @@ const app = Vue.createApp({
             this.x = e.offsetX
             this.y = e.offsetY
         }        
+    },
+    computed: {
+        filteredFavBooks() {
+            return this.books.filter((book) => book.isFav)
+        },
+        filteredNotFavBooks() {
+            return this.books.filter((book) => !book.isFav)
+        }
     }
 })
 
