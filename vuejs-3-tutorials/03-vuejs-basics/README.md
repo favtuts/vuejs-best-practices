@@ -131,5 +131,26 @@ JS Code
     },
 ```
 
-
 ![vue-basics-list-books](./images/vuejs3-tutorials-render-list-books.png)
+
+# Attribute Binding
+
+Using `v-bind` directive to bind attribute value
+```html
+    <div id="app">
+        <!-- attribute binding -->
+        <a v-bind:href="url">best website ever</a>
+    </div>
+```
+
+JS Code
+```js
+    data() {
+        return {
+            url: 'http://www.thenetninja.co.uk',           
+        }
+    },
+```
+
+
+![vue-basics-attribute-bind](./images/vuejs3-tutorials-attribute-binding-href.png)
