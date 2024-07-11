@@ -36,3 +36,45 @@ And define inline style on HEAD tag
 
 Now you should see 4 blocks
 ![vue-basics-show-initial-blocks](./images/vuejs3-tutorials-show-initial-blocks.png)
+
+
+Adding some text and mouse to these blocks
+* Ref: [Some Useful HTML Character Entities](https://www.w3schools.com/html/html_entities.asp#:~:text=To%20add%20real%20spaces%20to,use%20the%20character%20entity.)
+```html
+        <!-- mouse events-->
+        <div class="box" @mouseover="handleEvent">mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvent">mouseleave</div>
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box">&nbsp</div>
+```
+
+Capture mouse events in the method
+```js
+    methods: {        
+        handleEvent(e) {
+            console.log(e, e.type)
+        }
+    }
+```
+
+![vue-basics-mouse-event-handlers](./images/vuejs3-tutorials-mouse-event-handles.png)
+
+You can see the MouseEvent type is shown in the Console. To explicit the event object to be passed to `handleEvent` method, let use `$event`
+```html
+<div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div>
+```
+
+And JS code
+```js
+    methods: {                
+        handleEvent(e, data) {
+            console.log(e, e.type)
+            if (data) {
+                console.log(data)
+            }
+        }
+    }
+```
+
+![vue-basics-mouse-explicit-event](./images/vuejs3-tutorials-mouse-explicit-event-data.png)
+
